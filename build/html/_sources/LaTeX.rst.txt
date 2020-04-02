@@ -2,14 +2,31 @@ LaTeX入门教程
 ##################
 
 
+安装（待完善）
+***************************
+
+
+第一个\LaTeX程序
+********************
+
+新建一个`.tex`文档,写下如下的内容：
+
+.. code-block:: latex
+
+	\documentclass{article}  
+	% 文档类型: 可选report / book / proc / slides / minimal
+	\begin{document}   				% 开始编写文档，命令以\开头
+		"hello \LaTeX!"   			% 文档内容，用%注释
+	\end{document}     				% 结束编写文档，命令以\开头
+
+
+
+
 
 
 基本结构
 ****************
-::
 
-	\documentclass{article}
-	% 文档类型: report / book / proc / slides / minimal
 
 
 

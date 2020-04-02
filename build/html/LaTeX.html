@@ -96,13 +96,15 @@
               <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LaTeX入门教程</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">基本结构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">章节和段落</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">符号和公式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">插入图表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">参考文献</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">附录</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">美赛论文模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">安装（待完善）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">第一个LaTeX程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">基本结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">章节和段落</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">符号和公式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">插入图表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">参考文献</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">附录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">美赛论文模板</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_basic.html">Python基础</a></li>
@@ -175,30 +177,40 @@
   <div class="section" id="latex">
 <h1>LaTeX入门教程<a class="headerlink" href="#latex" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>基本结构<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>\<span class="n">documentclass</span><span class="p">{</span><span class="n">article</span><span class="p">}</span>
-<span class="o">%</span> <span class="n">文档类型</span><span class="p">:</span> <span class="n">report</span> <span class="o">/</span> <span class="n">book</span> <span class="o">/</span> <span class="n">proc</span> <span class="o">/</span> <span class="n">slides</span> <span class="o">/</span> <span class="n">minimal</span>
-</pre></div>
-</div>
-<p>第三个是大哥电饭锅</p>
+<h2>安装（待完善）<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id2">
-<h2>章节和段落<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>第一个LaTeX程序<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>新建一个`.tex`文档,写下如下的内容：</p>
+<div class="highlight-latex"><div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="c">% 文档类型: 可选report / book / proc / slides / minimal</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>                                <span class="c">% 开始编写文档，命令以\开头</span>
+        &quot;hello <span class="k">\LaTeX</span>!&quot;                         <span class="c">% 文档内容，用%注释</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>                                  <span class="c">% 结束编写文档，命令以\开头</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id3">
-<h2>符号和公式<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>基本结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>第三个是大哥电饭锅</p>
 </div>
 <div class="section" id="id4">
-<h2>插入图表<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>章节和段落<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id5">
-<h2>参考文献<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>符号和公式<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id6">
-<h2>附录<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>插入图表<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id7">
-<h2>美赛论文模板<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>参考文献<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id8">
+<h2>附录<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id9">
+<h2>美赛论文模板<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

@@ -12,12 +12,13 @@
 
 .. toctree::
    :maxdepth: 3
-   :caption: 目录:
+   :caption: Content:
 
    LaTeX
-   python_basic
    visualization
    matlab
+   rst_tutorial
+   python_basic
 .. MATLAB
 .. 数据可视化visualization.rst
 .. Python网络爬虫

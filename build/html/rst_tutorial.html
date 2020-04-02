@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="chinese" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="chinese" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rst基础 &mdash; 任公子 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.0.1',
+              LANGUAGE:'chinese',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="MATLAB入门教程" href="matlab.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 任公子
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="LaTeX.html">LaTeX入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_basic.html">Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">数据可视化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB入门教程</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">rst基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">标题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">段落</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">超链接</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">网址超链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">锚文本超链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">页内锚文本</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">中场休息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">代码</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">行内代码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">原始文本块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">块级代码</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">斜体和加粗</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">引用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">图片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">表格</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">列表表格</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id20">一些推荐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id21">结语</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">任公子</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>rst基础</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/rst_tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rst">
+<h1>rst基础<a class="headerlink" href="#rst" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>本文试图说明如何使用最简单的 reStructuredText 标记语法写一篇文章，适用于完全没有 reStructuredText 语法经验的人。如果你稍有一些 Markdown 或 HTML 之类的经验，理解起来会更快。</li>
+<li>与其他标记语法相比，reStructuredText 是个完善且优雅的标记语法，网上有完整的文档和教程，也囿于功能强大以至内容稍多，可能阻碍了初学者快速上手，所以我摘选了撰写一篇文章最最基础的部分做教程，试图减轻初学者的记忆负担。</li>
+<li>如果你有比较高的写作需求，可以继续探索一些更高级的用法，会让你的写作效率更高，原始文本更美观。</li>
+<li>即便你看到这里就已励志成为 reStructuredText 高手，我也推荐你从这篇入门指南开始，直接看官方文档实在是太长了......</li>
+<li>有时你会看到 reStructuredText 被缩写为 reST 或 rst。</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>概念<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>首先明确 reStructuredText 里的几个基本知识点（为了便于理解，不严谨）：</p>
+<ul class="simple">
+<li>标记元素分两种：指令（Directives）和角色（Role），指令是块级元素，像段落一样使用。角色是行内元素，可以写在普通文本之中。</li>
+<li>指令和它要包含的内容之间需要一个空行。</li>
+<li>空行、空格和缩进都是有意义的，你在其他语法中可能会遇到自动清除缩进的情况，但在 reStructuredText 里是讲究对齐缩进的。</li>
+<li>每级缩进推荐用 4 个空格，你可以把你的编辑器设置为 Tab 自动转为 4 个空格。</li>
+<li>块级元素可以用缩进来嵌套，除了标题（标题是一种特殊的块级元素，不能放在缩进的文本中）。</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>标题<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>一级标题在文本的第二行使用 # 来标记，就像手打下划线一样。</li>
+<li>二、三、四、五、六级标题分别使用 * + = : -，通常记住 # * + 就够了。</li>
+<li>标题递进必须按顺序，不能一级标题后紧跟三级标题，否则会渲染失败。</li>
+<li>原则上这个手打的“下划线”的长度至少跟标题文字一样长，可以超长。</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>段落<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>普通的文本段落之间，还有块级元素之间，必须使用一个空行加以区分，否则会被 reStructuredText 折叠到上一行。</p>
+</div>
+<div class="section" id="id5">
+<h2>列表<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>星号开头的是无序列表，会渲染为一个圆点。</li>
+<li>同级列表项之间可以空行，不会打断。</li>
+<li>但如果你换了一个符号，列表就被打断了。（有时候受样式影响视觉上看不出来。）</li>
+<li>星号、加号、减号都可以标记无序列表。</li>
+</ul>
+<ol class="arabic simple">
+<li>使用“井号英文句点空格”开头的会被渲染为有序列表，前面带数字，数字自动递增。</li>
+<li>空行不会打断序号。</li>
+<li><dl class="first docutils">
+<dt>你可能想在列表里嵌套列表。</dt>
+<dd><ol class="first last arabic">
+<li>这时候子列表要和上级列表挨着，不要空行。</li>
+<li>同级列表之间是可以空行的。</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h2>超链接<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>网址超链接<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>你可以直接粘贴网址，两端用空格和文本隔开，reStructuredText 会自动把网址转成超链接，像这样 <a class="reference external" href="http://www.bary.com/">http://www.bary.com/</a> ，注意结束的地方要跟空格。</p>
+<p>如果你希望网址和文本之间没有空格，可以用转义符号反斜杠 把空格消掉，由于反斜杠是转义符号，所以如果你想在文中显示它，需要打两个反斜杠，也就是用反斜杠转义一个反斜杠。像这样<a class="reference external" href="http://www.bary.com/">http://www.bary.com/</a>。</p>
+</div>
+<div class="section" id="id8">
+<h3>锚文本超链接<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>有时你需要用锚文本来显示一个链接，需要用到反引号（键盘数字 1 左边那个键）、尖括号、下划线、空格。</p>
+<p>例子：<a class="reference external" href="http://www.bary.com">Bary.com</a></p>
+<p>用尖括号包裹网址，放在文本后面（注意隔一个空格），用一对反引号包裹它们，切记结尾跟一个下划线。</p>
+<p>在这里，反引号就是引号，它包裹住你想转换的内容，下划线是转换成链接的意思，reStructuredText 中有很多种链接，都是用下划线结尾的。</p>
+</div>
+<div class="section" id="id9">
+<h3>页内锚文本<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>你可以看到每一级标题都会变成一个“锚”，也就是你可以创建一个跳转此位置的链接。比如我创建一个锚文本直接跳转到 <a class="reference internal" href="#id6">超链接</a> 这个标题下。由于超链接这三个字中没有空格，直接跟一个 _ 会转换“超链接”这三个字为链接，并搜索本文内的标题，指向它。</p>
+<p>前面的例子没有用反引号，是因为“超链接”这三个字之间没有空格，如果你某一个标题是带空格的，那么就需要用反引号括起来。当然我推荐你任何时候都使用反引号，记忆负担小。</p>
+<p>所以最佳实践是<a class="reference internal" href="#id6">超链接</a>这样使用。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>中场休息<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>现在你会看到，标题、段落、列表是块级元素，自成一级，超链接是行内元素，它可以放到其它元素的行内。</p>
+<p>注意这个概念，下文的代码和图片部分都会用到。</p>
+</div>
+<div class="section" id="id11">
+<h2>代码<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>插播代码块，因为下面要写指令（Directives）了。</p>
+<div class="section" id="id12">
+<h3>行内代码<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>在行内显示一段代码，要用四个反引号括起来，当然两端还要有空格。</p>
+<p>看起来像 <code class="docutils literal"><span class="pre">import</span> <span class="pre">numpy</span></code> 这样。</p>
+</div>
+<div class="section" id="id13">
+<h3>原始文本块<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>使用两个连续的英文引号:: 来标记一个原始文本块，之后跟空行，内容要缩进，再以空行结束。看起来像这样：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>原始文本块内的任何标记都不会被转换，随便写。
+
+`Bary.com &lt;http://www.bary.com/&gt;`_
+
+这还会显示在原始文本块中。
+
+    缩进都会原样显示出来。
+
+    只要最后有空行，缩进退回到 :: 的位置，就表示退出了\ `原始文本块`_。
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>块级代码<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>任何代码都可以使用原始文本块，它不会转换内部的字符，</p>
+<p>但有时候我们需要写一些源代码，希望它能高亮显示，这就需要用“块级代码”。</p>
+<div class="code php highlight-default"><div class="highlight"><pre><span></span>&lt;?php
+    if(1 == 1){
+        $joke = &quot;Life is short, not int.&quot;;
+    }
+?&gt;
+</pre></div>
+</div>
+<p>你会看到：</p>
+<p>它的形式是“句点句点空格code冒号冒号空格”后跟语言名，如果不跟语言名，.. code:: 和 :: 基本是一样的。</p>
+<p>只要配置了 CSS 或 Javascript 渲染，加了语言名就会有漂亮的颜色出来，支持很多种语言的高亮，甚至配置语法、模板。</p>
+<p>这里有个支持列表可以看: <a class="reference external" href="https://pygments.org/languages/">Pygments Supported Languages</a></p>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>斜体和加粗<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>会用了<a class="reference internal" href="#id6">超链接</a>、<a class="reference internal" href="#id12">行内代码</a>，斜体和加粗就很简单了，<em>斜体</em> 就是用星号括起来，<strong>加粗</strong> 是两个星号。</p>
+</div>
+<div class="section" id="id16">
+<h2>引用<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<p>多数时候，引用一段纯文本，可以直接使用 <code class="docutils literal"><span class="pre">::</span></code> 这种方式，但如果你想在引用里也使用
+reStructuredText 的语法标记，那你就删掉 <code class="docutils literal"><span class="pre">::</span></code> 就可以了，仅仅缩进。而且引用总是自动换行，<code class="docutils literal"><span class="pre">::</span></code> 则是根据样式控制换行。</p>
+<blockquote>
+<div>需要<strong>特别强调</strong>的是，“引用”里不能含有标题。</div></blockquote>
+</div>
+<div class="section" id="id17">
+<h2>图片<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>图片是块级元素，不能嵌入行内。（想用行内图片，比如表情，请查看高级教程。）</p>
+<p>图片要自成段落,跟 <code class="docutils literal"><span class="pre">..</span> <span class="pre">code::</span></code> 很像，只是图片在指令后面跟图片地址。</p>
+<img alt="_images/matlab_logo.png" src="_images/matlab_logo.png" />
+</div>
+<div class="section" id="id18">
+<h2>表格<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p>纯文本手打表格很麻烦，手画表格除了 Emacs 我没用过更好文本编辑器，可这个编辑器又比较难学。reStructuredText 中有好几种表格的实现方法，本文只介绍灵活性和简洁性适中的一种。</p>
+<div class="section" id="id19">
+<h3>列表表格<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>列表表格是通过创建一组嵌套的列表来渲染成表格。</p>
+<p>父级列表是行，每一行的子列表是列，每行的列数必须一致（不支持合并单元格），看例子：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>9</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>一些推荐<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<p>如果你已经看到这里了，大概你愿意继续深造：</p>
+<ul class="simple">
+<li>官方文档的 reStructuredText 语法部分：<a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h2>结语<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<p>本文内容来自`白杉 &lt;<a class="reference external" href="http://www.bary.com/doc/a/228277572381775842/#33246dda">http://www.bary.com/doc/a/228277572381775842/#33246dda</a>&gt;`_</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="matlab.html" class="btn btn-neutral float-left" title="MATLAB入门教程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 任公子@SJTU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
