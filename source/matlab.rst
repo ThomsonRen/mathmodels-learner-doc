@@ -30,7 +30,6 @@ MATLAB是Matrix&Laboratory两个词的组合，意为矩阵工厂（矩阵实验
 
 MATLAB和Mathematica、Maple并称为三大数学软件。它在数学类科技应用软件中在数值计算方面首屈一指。MATLAB可以进行矩阵运算、绘制函数和数据、实现算法、创建用户界面、连接其他编程语言的程序等，在工程计算、控制设计、信号处理与通讯、图像处理、信号检测、金融建模设计与分析等领域有广泛应用。
 
-.. image:: images/matlab_logo.png
 
 
 MATLAB功能
