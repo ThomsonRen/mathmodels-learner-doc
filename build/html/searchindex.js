@@ -1,0 +1,1 @@
+Search.setIndex({docnames:["index"],envversion:53,filenames:["index.rst"],objects:{},objnames:{},objtypes:{},terms:{"\u6b22\u8fce\u6765\u5230mcm":[],document:[],index:0,mcm:[],modul:0,page:0,search:0,welcom:[]},titles:["Welcome to MCM's documentation!"],titleterms:{document:0,indic:0,mcm:0,tabl:0,welcom:0}})
