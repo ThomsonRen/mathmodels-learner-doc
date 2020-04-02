@@ -14,7 +14,7 @@
    :maxdepth: 2
    :caption: Contents:
 
-   LaTeX
+..   LaTeX
    python_basic
    visualization
    matlab
