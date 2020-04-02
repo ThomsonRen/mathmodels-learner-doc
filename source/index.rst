@@ -17,6 +17,7 @@
    LaTeX
    python_basic
    visualization
+   matlab
 .. MATLAB
 .. 数据可视化visualization.rst
 .. Python网络爬虫

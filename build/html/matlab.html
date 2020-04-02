@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="chinese" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="chinese" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MATLAB入门教程 &mdash; 任公子 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.0.1',
+              LANGUAGE:'chinese',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="数据可视化" href="visualization.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 任公子
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="LaTeX.html">LaTeX入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_basic.html">Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">数据可视化</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MATLAB入门教程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">内容概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">MATLAB简介</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">MATLAB功能</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">MATLAB的安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">基本数据类型和操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">数值型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">向量的生成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">矩阵的生成</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">任公子</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>MATLAB入门教程</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/matlab.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="matlab">
+<h1>MATLAB入门教程<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>内容概述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>通过本教程大家可以学会的：</dt>
+<dd><ul class="first last">
+<li>MATLAB语法：一切操作的基础</li>
+<li>使用MATLAB编写程序：函数和m文件的定义</li>
+<li>MATLAB绘图操作：图像的生成、格式修改和导出</li>
+<li>MATLAB进一步学习的方向：专业工具箱的使用、使用并行计算和矩阵计算提高效率</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>本教程没有涉及的：</dt>
+<dd><ul class="first last">
+<li>这是一个MATLAB的编程教程，仅涉及语法，不涉及算法，大家可以自行尝试使用MATLAB实现简单的算法，可以从最简单的排序、动态规划、贪心、最短路算法等入手。也可以从科研或学习实际入手，实践是提高编程水平的最高效途径。</li>
+<li>本教程不涉及各类专业工具箱的介绍和使用指南。 MATLAB是一个很全面的软件，涉及机械控制、图像处理、工程、物理学、化学、金融等多个领域，每个领域又有专业的工具箱，在掌握了基础的操作以后，各学科的同学可以根据需要深入了解专业工具箱的作用，这个内容已经远远超出了本次入门教程的范围。</li>
+<li>本教程没有详细展开MATLAB中的面向对象编程。 面向对象编程是组织大型代码的常用方法，MATLAB在2008a以后也开始支持面向对象编程，面向对象编程是一种正式的编程方法，它将数据和相关操作（方法）合并到逻辑结构（对象）中。该方法可提升管理软件复杂性的能力——在开发和维护大型应用与数据结构时尤为重要。对于想要使用MATLAB进行数值分析和是可视化的同学来说，数据往往是简单的，此时面向对象编程的优势不太明显。但是，如果我们想要使用MATLAB开发大规模的计算程序，例如一整套实验数据的处理程序，面向对象可能是你需要继续深入学习的知识</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>MATLAB简介<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>MATLAB是Matrix&amp;Laboratory两个词的组合，意为矩阵工厂（矩阵实验室）。是由美国Mathworks公司发布的主要面对科学计算、可视化以及交互式程序设计的高科技计算环境。</p>
+<p>MATLAB和Mathematica、Maple并称为三大数学软件。它在数学类科技应用软件中在数值计算方面首屈一指。MATLAB可以进行矩阵运算、绘制函数和数据、实现算法、创建用户界面、连接其他编程语言的程序等，在工程计算、控制设计、信号处理与通讯、图像处理、信号检测、金融建模设计与分析等领域有广泛应用。</p>
+<img alt="_images/matlab_logo.png" src="_images/matlab_logo.png" />
+<div class="section" id="id3">
+<h3>MATLAB功能<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>数值计算和符号计算功能</dt>
+<dd><ul class="first last">
+<li>MATLAB以矩阵作为数据操作的基本单位，还提供了十分丰富的数值计算函数。</li>
+<li>MATLAB和著名的符号计算语言Maple相结合，使得MATLAB具有符号计算功能。</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>绘图功能</dt>
+<dd><ul class="first last">
+<li>MATLAB提供了两个层次的绘图操作：一种是对图形句柄进行的低层绘图，另一种是建立在低层绘图操作之上的高层绘图操作。</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>编程语言</dt>
+<dd><ul class="first last">
+<li>MATLAB具有程序结构控制、函数调用、数据结构、输入输出、面向对象等程序语言特征，而且简单易学、编程效率高。</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>MATLAB工具箱</dt>
+<dd><ul class="first last">
+<li>MATLAB包含两部分内容：基本部分和各种可选的工具箱。</li>
+<li>MATLAB工具箱分为两大类：功能性工具箱和学科性工具箱。</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p><strong>MATLAB是一个数值计算的工具软件，不是一门编程语言。大多数用MATLAB的人不是真正的程序员，而且不想成为（他们只关注数值计算）。</strong></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>MATLAB的安装<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2>基本数据类型和操作<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>在matlab中提供了多种数据类型，包括浮点型和整形、字符和字符串、逻辑（True/False）表达式、函数句柄、结构数组、元胞数组、map容器、日期和时间、分类数组、表格和时间序列等等。这里我们对其中重要的几个展开解释。</p>
+<div class="section" id="id6">
+<h3>数值型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>MATLAB中的数值包括有符号和无符号整数，单精度和双精度浮点数。默认情况下，matlab使用双精度浮点数存储数据。数值型数组或矩阵构造比较简单，这里简要概述如下：</p>
+<p>数的四则运算和赋值语句</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>  <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>已经赋值的数据都可以在工作区（workspace）查看，如果不给定赋值对象，则系统会默认将计算结果赋值给“ans”变量，后续的计算会覆盖之前的结果（类似计算器的功能）</p>
+<p>通过在命令行按“↑”“↓”箭头可以重复之前输入过的命令。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>通过添加分号可以省略命令行的输出</p>
+</div>
+<div class="section" id="id7">
+<h3>向量的生成<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>行向量：写在英文中括号[]内，数字间用“，”或者空格隔开</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>列向量：写在英文中括号[]内，数字间用“；” 隔开</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="p">;</span> <span class="mi">2</span> <span class="p">;</span> <span class="mi">3</span> <span class="p">;</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>有规律的数组可以利用“：”辅助输入，需要指定开始数字，结束数字和步长</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>a = 1:2:10    %从1开始，到10结束，步长为2（步长可以省略，缺省值为1）
+</pre></div>
+</div>
+<p>两个常用命令：
+* clc：  clears the Command Window，清空命令窗口
+* clear： 清空工作空间（储存的所有数据）</p>
+</div>
+<div class="section" id="id8">
+<h3>矩阵的生成<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>写在英文中括号[]内，数字间用“，”或者空格隔开，行与行之间用“；”隔开</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>利用矩阵生成函数：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>z = zeros(2,3)%其中第一个参数为行数，第二个参数为列数
+</pre></div>
+</div>
+<p>类似的，还有ones，rand函数。</p>
+<p>还可以利用已定义向量合并成为矩阵</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">];</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">];</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>矩阵索引</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="visualization.html" class="btn btn-neutral float-left" title="数据可视化" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 任公子@SJTU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
