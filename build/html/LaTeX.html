@@ -44,7 +44,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python基础" href="python_basic.html" />
+    <link rel="next" title="数据可视化" href="visualization.html" />
     <link rel="prev" title="欢迎来到任公子的个人主页！" href="index.html" /> 
 </head>
 
@@ -93,23 +93,30 @@
               
             
             
-              <p class="caption"><span class="caption-text">目录:</span></p>
+              <p class="caption"><span class="caption-text">Content:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LaTeX入门教程</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">安装（待完善）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">第一个LaTeX程序</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">基本结构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">章节和段落</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">符号和公式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">插入图表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">参考文献</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">附录</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">美赛论文模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">安装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mac">Mac</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#texstudio">安装Texstudio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overleaf">关于在线平台Overleaf</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python_basic.html">Python基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">第一个LaTeX程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">基本结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">章节和段落</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">符号和公式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">插入图表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">参考文献</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">附录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">美赛论文模板</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="visualization.html">数据可视化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst_tutorial.html">rst基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_basic.html">Python基础</a></li>
 </ul>
 
             
@@ -177,11 +184,43 @@
   <div class="section" id="latex">
 <h1>LaTeX入门教程<a class="headerlink" href="#latex" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>安装（待完善）<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>这里为大家介绍Tex Live + Texstudio的安装 <a class="footnote-reference" href="#f1" id="id2">[1]</a>。</p>
+<p>TeX Live属于比较完善的LaTeX编译器，其自带的文本编辑器为TeXworks是一款简洁的LaTeX编辑器，如果没有过多的需求，TeXworks完全可以满足需要。当然，为了追求更加美观或者流畅的体验，很多用户往往结合Atom、Sublime、VS Code、TeXstudio等编辑器来进行论文书写。这里我们选择了较为简单但功能强大的TeXstudio。</p>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>TeX Live 的当前版本是 2019，你可以从官方站点下载它们的安装包。点击<a class="reference external" href="http://mirror.ctan.org/systems/texlive/Images/texlive2019.iso">此处</a>，将会「自动选择」距离你最近的镜像下载。</p>
+<p>当然，这个自动选择可能不太靠谱。如果你身处中国大陆，发现下载速度很慢，可以尝试<a class="reference external" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2019.iso">清华大学</a>和<a class="reference external" href="https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive2019.iso">中国科技大学</a>的镜像站。</p>
+<p>你需要使用虚拟光驱软件（对于 Windows 8 及更高版本的微软用户，可以直接加载），加载下载得到的光盘镜像。而后，执行安装脚本，将 TeX Live 安装在你的系统中。</p>
+<p>右键单击 install-tl-advanced.bat，以管理员权限执行；</p>
+<p>按照指令选择安装路径，根据电脑配置不同大概需要15min-1h不等。</p>
 </div>
-<div class="section" id="id2">
-<h2>第一个LaTeX程序<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>新建一个`.tex`文档,写下如下的内容：</p>
+<div class="section" id="mac">
+<h3>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h3>
+<p>TeX Live 在 macOS/OS X 上的名字是 MacTeX，它的官方站点是 <code class="docutils literal"><span class="pre">https://tug.org/</span></code> mactex。你可以在<a class="reference external" href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg">这里</a>下载 MacTeX 的安装器，而后安装 MacTeX。</p>
+<p>如果你身处中国大陆，发现下载速度很慢，可以尝试<a class="reference external" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/mac/mactex/MacTeX.pkg">清华大学MacTeX</a>和<a class="reference external" href="https://mirrors.ustc.edu.cn/CTAN/systems/mac/mactex/MacTeX.pkg">中国科技大学MacTeX</a>的镜像站。</p>
+<p>下载以后打开安装包，将MacTeX安装在你的电脑中。</p>
+</div>
+<div class="section" id="texstudio">
+<h3>安装Texstudio<a class="headerlink" href="#texstudio" title="Permalink to this headline">¶</a></h3>
+<p>Texstudio 是免费软件，体积也比较小，直接从网络资源获取即可。</p>
+<p>安装成功以后，打开texstudio，新建一个文件，输入以下代码，然后点运行，如果下方没有报错就是安装成功啦。</p>
+<div class="highlight-latex"><div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+        Hello, LaTex.
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="overleaf">
+<h3>关于在线平台Overleaf<a class="headerlink" href="#overleaf" title="Permalink to this headline">¶</a></h3>
+<p>实际上，配置LaTeX环境是令每一个初学者都很头疼的事情。</p>
+<p>如果你不想一开始就将大把的时间花费在环境配置上，可以先从在线运行环境Overleaf开始。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>第一个LaTeX程序<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>新建一个 <code class="docutils literal"><span class="pre">my_test.tex</span></code> 文档,写下如下的内容：</p>
 <div class="highlight-latex"><div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 <span class="c">% 文档类型: 可选report / book / proc / slides / minimal</span>
 <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>                                <span class="c">% 开始编写文档，命令以\开头</span>
@@ -189,28 +228,34 @@
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>                                  <span class="c">% 结束编写文档，命令以\开头</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h2>基本结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>第三个是大哥电饭锅</p>
-</div>
-<div class="section" id="id4">
-<h2>章节和段落<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id5">
-<h2>符号和公式<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id6">
-<h2>插入图表<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id7">
-<h2>参考文献<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id8">
-<h2>附录<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>点击编译，就可以得到一个pdf文件了。</p>
 </div>
 <div class="section" id="id9">
-<h2>美赛论文模板<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2>基本结构<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id10">
+<h2>章节和段落<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id11">
+<h2>符号和公式<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id12">
+<h2>插入图表<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id13">
+<h2>参考文献<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id14">
+<h2>附录<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id15">
+<h2>美赛论文模板<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Text of the first footnote.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -222,7 +267,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="python_basic.html" class="btn btn-neutral float-right" title="Python基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="visualization.html" class="btn btn-neutral float-right" title="数据可视化" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="欢迎来到任公子的个人主页！" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
