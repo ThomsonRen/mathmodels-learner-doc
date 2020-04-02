@@ -4,22 +4,28 @@
    contain the root `toctree` directive.
 
 
-
-
-
 .. 欢迎来到MCM
 
 
-Welcome to MCM's documentation!
+欢迎来到任公子的个人主页！
 ===============================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   LaTeX
+   python_basic
+   visualization
+.. MATLAB
+.. 数据可视化visualization.rst
+.. Python网络爬虫
+.. 正则表达式
 
 
-Indices and tables
+
+
+其他功能
 ==================
 
 * :ref:`genindex`
