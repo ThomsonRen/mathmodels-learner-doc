@@ -170,6 +170,12 @@ reStructuredText 的语法标记，那你就删掉 ``::`` 就可以了，仅仅�
 
 .. image:: /images/matlab_logo.png
 
+.. image:: /images/test.svg
+    :align: center
+
+
+
+
 表格
 ***********
 

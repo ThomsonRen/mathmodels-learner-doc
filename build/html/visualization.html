@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -96,7 +97,21 @@
               <p class="caption"><span class="caption-text">Content:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="LaTeX.html">LaTeX入门教程</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">数据可视化</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">数据可视化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#matplotlib">matplotlib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Matplotlib图表组成</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#plot">函数 <code class="docutils literal"><span class="pre">plot()</span></code> ——展现变量的变化趋势</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scatter">函数 <code class="docutils literal"><span class="pre">scatter()</span></code> ——寻找变量之间的关系</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#x-xlim">设置x轴的数值显示范围函数 <code class="docutils literal"><span class="pre">xlim</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xlabel-x">函数 <code class="docutils literal"><span class="pre">xlabel()</span></code>  ——设置x轴的标签文本</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid">函数 <code class="docutils literal"><span class="pre">grid()</span></code> ——绘制刻度线的网格线</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#axhline-x">函数 <code class="docutils literal"><span class="pre">axhline()</span></code> ——绘制平行于x轴的水平参考线</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB入门教程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rst_tutorial.html">rst基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_basic.html">Python基础</a></li>
@@ -166,6 +181,216 @@
             
   <div class="section" id="id1">
 <h1>数据可视化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="matplotlib">
+<h2>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h2>
+<p>这里我们介绍python中进行简单数据可视化的方法，使用的工具是python中最基础的matplotlib库。</p>
+<div class="section" id="id2">
+<h3>Matplotlib图表组成<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>我们通过一个例子来看一张Matplotlib图表是如何绘制的。</p>
+<p>画图的第一步是准备数据，数据可以手动输入，也可以通过文件进行导入，本节内容较为简单，暂时采用手动输入的形式，关于数据的导入方法，可参考pandas相关教程。</p>
+<p>为了处理数据和绘图，我们首先导入第三方包Numpy和快速绘图模块pyplot，其中科学计算包Numpy是matplotlib库的基础，也就是说，matplotlib库是建立在Numpy库基础上的Python绘图库。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+<p>现在我们就可以定义一些完成绘图所需的数据了，例如</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># 在0.5到3.5之间均匀地取100个数</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>           <span class="c1"># 求出每一个数对应的正弦值</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># 在标准正态分布中随机地取100个数</span>
+</pre></div>
+</div>
+<p>然后开始绘图</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># 绘制(x,y)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span> <span class="c1"># 绘制(x,y1)</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/图表组成.svg" src="_images/图表组成.svg" /></div>
+<p>下面我们通过函数的形式来学习绘图，反过来，再用绘图的形式来强化对函数的记忆。</p>
+<div class="section" id="plot">
+<h4>函数 <code class="docutils literal"><span class="pre">plot()</span></code> ——展现变量的变化趋势<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>函数功能：展现变量的变化趋势</li>
+<li>调用方法： <code class="docutils literal"><span class="pre">plt.plot(x,y,ls='-',lw=2,label='plot</span> <span class="pre">figure')</span></code></li>
+<li><dl class="first docutils">
+<dt>参数说明</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">x</span></code>: x轴上的数值</li>
+<li><code class="docutils literal"><span class="pre">y</span></code>: y轴上的数值</li>
+<li><code class="docutils literal"><span class="pre">ls</span></code>: linestyle,折线的线条风格</li>
+<li><code class="docutils literal"><span class="pre">lw</span></code>: linewidth,折线的线条宽度</li>
+<li><code class="docutils literal"><span class="pre">label</span></code>: 标记图形内容的标签文本</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># 生成从0.05 到 10 等分的1000个数据</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 计算x的余弦值</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;My First Line&#39;</span><span class="p">)</span>  <span class="c1"># 线性为虚线--，线宽为6，标签为&#39;My first line&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>   <span class="c1"># 显示图例，不加这一句则不显示图例</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/plot函数.svg" src="_images/plot函数.svg" /></div>
+<p>如果想了解更多 <code class="docutils literal"><span class="pre">plot</span></code> 参数，可以使用 <code class="docutils literal"><span class="pre">help()</span></code> 方法获取帮助。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scatter">
+<h4>函数 <code class="docutils literal"><span class="pre">scatter()</span></code> ——寻找变量之间的关系<a class="headerlink" href="#scatter" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>函数功能：散点图，寻找变量之间的关系</li>
+<li>调用方法：<code class="docutils literal"><span class="pre">plt.scatter(x,y,c='b',label</span> <span class="pre">=</span> <span class="pre">'scatter</span> <span class="pre">figure')</span></code></li>
+<li><dl class="first docutils">
+<dt>参数说明</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">x</span></code>: x轴上的数值</li>
+<li><code class="docutils literal"><span class="pre">y</span></code>: y轴上的数值</li>
+<li><code class="docutils literal"><span class="pre">c</span></code>: 散点图中的标记颜色</li>
+<li><code class="docutils literal"><span class="pre">label</span></code>: 标记图形内容的标签文本</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># 生成从0.05 到 10 等分的100个数据</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># 生成100个正态分布的随机数</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;my figure&#39;</span><span class="p">)</span>
+
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># 生成100个正态分布的随机数</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/scatter函数.svg" src="_images/scatter函数.svg" /></div>
+</div>
+<div class="section" id="x-xlim">
+<h4>设置x轴的数值显示范围函数 <code class="docutils literal"><span class="pre">xlim</span></code><a class="headerlink" href="#x-xlim" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>函数功能：设置x轴的数值显示范围</li>
+<li>调用方法： <code class="docutils literal"><span class="pre">plt.xlim(xmin,xmax)</span></code></li>
+<li><dl class="first docutils">
+<dt>参数说明</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">xmin</span></code>: $x$轴上的最小值</li>
+<li><code class="docutils literal"><span class="pre">xmax</span></code>: $x$轴上的最大值</li>
+<li>同样的方法可以用在 <code class="docutils literal"><span class="pre">plt.ylim()</span></code> 上</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># 生成从0.05 到 10 等分的100个数据</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="c1"># 生成100个正态分布的随机数</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># 生成100个正态分布的随机数</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;scatter figure&#39;</span><span class="p">)</span>  <span class="c1"># 绘制第一组数据</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;scatter figure2&#39;</span><span class="p">)</span> <span class="c1"># 绘制第二组数据</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># 增加图例</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="c1"># 设置x轴显示范围</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.2</span><span class="p">)</span> <span class="c1"># 设置y轴显示范围</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/xlim.svg" src="_images/xlim.svg" /></div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">注意：除非特殊情况，不推荐大家自定坐标轴显示范围。因为这可能会导致后续数据改变以后，图像变得很奇怪。</p>
+</div>
+</div>
+<div class="section" id="xlabel-x">
+<h4>函数 <code class="docutils literal"><span class="pre">xlabel()</span></code>  ——设置x轴的标签文本<a class="headerlink" href="#xlabel-x" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>函数功能：设置x轴的标签文本</li>
+<li>调用方法：<code class="docutils literal"><span class="pre">plt.xlabel(string)</span></code></li>
+<li><dl class="first docutils">
+<dt>参数说明</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">string</span></code>: 标签文本内容</li>
+<li>同样的方法可以用在 <code class="docutils literal"><span class="pre">plt.ylabel()</span></code> 上</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># 生成从0.05 到 10 等分的100个数据</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>   <span class="c1"># 生成100个正态分布的随机数</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;scatter figure&#39;</span><span class="p">)</span>  <span class="c1"># 绘图</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># 增加图例</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 设置x轴显示范围</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 设置y轴显示范围</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span> <span class="c1"># 设置x轴标签</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$v_1$&#39;</span><span class="p">)</span> <span class="c1"># 设置y轴标签</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/xlabel.svg" src="_images/xlabel.svg" /></div>
+</div>
+<div class="section" id="grid">
+<h4>函数 <code class="docutils literal"><span class="pre">grid()</span></code> ——绘制刻度线的网格线<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>函数功能：绘制刻度线的网格线</li>
+<li>调用方法：<code class="docutils literal"><span class="pre">plt.grid(linestyle</span> <span class="pre">=</span> <span class="pre">':',</span> <span class="pre">color</span> <span class="pre">=</span> <span class="pre">'r')</span></code></li>
+<li><dl class="first docutils">
+<dt>参数说明</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">linestyle</span></code>: 网格的线条风格</li>
+<li><code class="docutils literal"><span class="pre">color</span></code>: 网格的线条颜色</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;scatter figure&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;My x-axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;My y-axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># 增加刻度线</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/grid.svg" src="_images/grid.svg" /></div>
+<p>当然，如果需要的话，更多的参数设置方法，你也可以通过 <code class="docutils literal"><span class="pre">help()</span></code> 去查看</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="axhline-x">
+<h4>函数 <code class="docutils literal"><span class="pre">axhline()</span></code> ——绘制平行于x轴的水平参考线<a class="headerlink" href="#axhline-x" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>函数功能：绘制平行于x轴的水平参考线</li>
+<li>调用方法：<code class="docutils literal"><span class="pre">plt.axhline(y=0.0,c='r',ls='--',lw=2)</span></code></li>
+<li><dl class="first docutils">
+<dt>参数说明</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">y</span></code>: 水平参考线的出发点</li>
+<li><code class="docutils literal"><span class="pre">c</span></code>: 参考线的线条颜色</li>
+<li><code class="docutils literal"><span class="pre">ls</span></code>: 参考线的线条风格</li>
+<li><code class="docutils literal"><span class="pre">lw</span></code>: 参考线的线条宽度</li>
+<li>上面的函数功能一样可以用到<code class="docutils literal"><span class="pre">axvline</span></code>上</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;scatter figure&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;My x-axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;My y-axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># 增加水平线</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>    <span class="c1"># 增加垂直线</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/vline.svg" src="_images/vline.svg" /></div>
+</div>
+</div>
+</div>
 </div>
 
 
