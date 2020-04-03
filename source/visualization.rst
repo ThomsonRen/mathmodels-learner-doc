@@ -223,10 +223,190 @@ Matplotlib图表组成
 	plt.axhline(y=0.5,c='r',ls='--',lw=2)  # 增加水平线
 	plt.axvline(x=5,c='g',ls='--',lw=2)    # 增加垂直线
 
-
 .. image:: images/python_basic/vline.svg
     :align: center
 
 
 
+测试文本
 
+
+
+函数 ``axvspan()`` ——绘制垂直于x轴的参考区域
+=========================================================
+
+- 函数功能：绘制垂直于x轴的参考区域
+- 调用方法：``plt.axvspan(xmin=1.0,xmax=2.0,facecolor='y',alpha=0.3)``
+- 参数说明
+    * ``xmin``: 参考区域的起始位置
+    * ``xmax``: 参考区域的终止位置
+    * ``facecolor``: 参考区域的填充颜色
+    * ``alpha``: 参考区域的颜色透明度
+    * 上面的函数功能一样可以用到\ ``axhspan()``\ 上
+
+
+
+.. code-block:: python
+
+	x = np.linspace(0.05,10,100)
+	y = np.random.rand(100)
+	plt.scatter(x,y,c= 'b',label='scatter figure')
+	plt.legend()
+	plt.xlim(0.05,10)
+	plt.ylim(0,1)
+	plt.xlabel('My x-axis')
+	plt.ylabel('My y-axis')
+	plt.axhspan(ymin=0.4,ymax=0.6,facecolor='r',alpha=.1)  # 增加水平区域
+	plt.axvspan(xmin=4,xmax=6,facecolor='y',alpha=0.1)      # 增加垂直区域
+
+
+.. image:: images/python_basic/vspan.svg
+    :align: center
+
+
+
+
+函数`annotate()` ——添加图形内容细节的指向型注释文本
+=========================================================
+
+- 函数功能：添加图形内容细节的指向型注释文本
+- 调用方法： ``plt.annotate(string,y=(x,y),xytext=(x_text,y_text))`` 
+- 参数说明
+    * ``string``: 图形内容的注释文本
+    * ``xy``: 被注释图形的内容的位置坐标
+    * ``xytext``: 注释文本的位置坐标
+    * ``weight``: 注释文本的粗细风格
+    * ``color``: 注释文本的字体颜色
+    * ``arrowprops``: 注释文本的属性字典
+
+
+.. code-block:: python
+
+	x = np.linspace(0.05,10,100)
+	y = np.sin(x)
+	plt.plot(x,y,c= 'b',label='scatter figure')
+	plt.legend()
+	plt.annotate('Minimum',
+	            xy = (3*np.pi/2,-1), # 箭头的头部
+	            xytext=(3*np.pi/2-0.5,-0.5), # 箭头的尾部
+	            #weight = 'bold', # 粗细
+	            #color= 'b', # 颜色
+	            arrowprops = dict(arrowstyle='->',connectionstyle='arc3',color = 'b')
+	            )
+
+
+.. image:: images/python_basic/annotate.svg
+    :align: center
+
+函数 ``text()`` ——添加图形内容细节的无指向型注释文本
+=========================================================
+
+
+- 函数功能：添加图形内容细节的指向型注释文本
+- 调用方法：\ ``plt.text(x,y,string,weight='bold',color='b')``\ 
+- 参数说明
+    * ``x``: 注释文本所在位置横坐标
+    * ``y``: 注释文本所在位置纵坐标
+    * ``string``: 注释文本内容
+    * ``weight``: 注释文本的粗细风格
+    * ``color``: 注释文本的字体颜色
+
+.. code-block:: python
+
+	x = np.linspace(0.05,10,100)
+	y = np.sin(x)
+	plt.plot(x,y,c= 'b',label='scatter figure')
+	plt.legend()
+	plt.text(3.10,0.09,'sin(x)', weight = 'bold',color= 'green')
+
+.. image:: images/python_basic/text.svg
+    :align: center
+
+
+函数 ``title()`` ——添加图形内容的标题
+===============================================
+
+- 函数功能：添加图形内容细节的指向型注释文本
+- 调用方法：``plt.title(string)``
+- 参数说明
+    * ``string``: 标题内容
+
+
+.. code-block:: python
+
+	x = np.linspace(0.05,10,100)
+	y = np.sin(x)
+	plt.plot(x,y,c= 'b',label='scatter figure')
+	plt.legend()
+	plt.text(3.10,0.09,'sin(x)', weight = 'bold',color= 'b')
+	plt.title('My first plot')
+
+.. image:: images/python_basic/title.svg
+    :align: center
+
+绘图函数的组合应用
+===============================================
+	
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import numpy as np
+	from matplotlib import cm as cm
+
+	# plt.figure(figsize=(10,5))
+	# define data
+	x = np.linspace(0.5,3.5,100)
+	y = np.sin(x)
+	y1 = np.random.randn(100)
+
+	# scatter figure
+	plt.scatter(x,y1,c='0.25',label='scatter figure')
+
+	# plot figure
+	plt.plot(x,y,ls='--',lw=2,label='plot figure')
+
+	# set x,y axis limit
+	plt.xlim(0,4)
+	plt.ylim(-3,3)
+
+	# set axis labels
+	plt.ylabel('y_axis')
+	plt.xlabel('x_axis')
+
+	# set x,y axis grid
+	plt.grid(ls=':',lw=2)
+
+	# add a horizontal line across the axis
+	plt.axhline(y=0,c='r',ls='--',lw=2)
+
+	# add a vertical span across the axis
+	plt.axvspan(xmin=1.0,xmax=2,facecolor = 'y',alpha = 0.3)
+
+	# set annotating info
+	plt.annotate('maximum',xy=(np.pi/2,1),xytext=(np.pi/2+0.15,1.5),weight='bold',color='r',
+	             arrowprops = dict(arrowstyle='->',connectionstyle='arc3',color = 'r'))
+
+	plt.annotate('spines',xy=(0.75,-3),xytext=(0.35,-2.25),weight='bold',color='b',
+	             arrowprops = dict(arrowstyle='->',connectionstyle='arc3',color = 'b'))
+
+	plt.annotate('',xy=(0,-2.78),xytext=(0.4,-2.32),weight='bold',color='b',
+	             arrowprops = dict(arrowstyle='->',connectionstyle='arc3',color = 'b'))
+
+	plt.annotate('',xy=(3.5,-2.98),xytext=(3.6,-2.70),weight='bold',color='b',
+	             arrowprops = dict(arrowstyle='->',connectionstyle='arc3',color = 'b'))
+
+	# set text info
+	plt.text(3.6,-2.70,'| is tickline',weight = 'bold',color = 'b')
+	plt.text(3.6,-2.95,'3.5 is ticklabel',weight = 'bold',color = 'b')
+
+	# set title
+	plt.title('structure of matplotlib')
+
+	# set legend
+	plt.legend()
+
+
+	plt.savefig('test.png')
+
+.. image:: images/python_basic/demo.svg
+    :align: center
