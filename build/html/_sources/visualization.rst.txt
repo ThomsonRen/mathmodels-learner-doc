@@ -410,3 +410,686 @@ Matplotlib图表组成
 
 .. image:: images/python_basic/demo.svg
     :align: center
+
+
+
+
+使用统计函数绘制简单图形
++++++++++++++++++++++++++++++
+
+在上一部分中，我们给大家介绍了属于统计图形范畴的折线图和散点图，接下来会详细讲解一些大家比较熟悉却又经常混淆的其他几个统计图形，掌握这些统计图形可以让我们对可视化有一个更加深入地了解，并正确使用。
+
+和前面一样，我们还是通过\ **函数功能、调用语法、参数说明和调用展示**\ 四个方面为大家讲解这些函数，期望能帮助大家建立对于python数据可视化的直观认识，培养大家使用matplotlib进行进一步学习的兴趣和信心。
+
+函数\ ``bar()``\ ——用于绘制柱状图
+======================================
+
+- 函数功能：在x轴上绘制定性数据的分布特征。
+- 调用方法：``plt.bar(x,y)``
+- 参数说明
+    * ``x``: 标示在$x$轴上的定性数据的分布特征
+    * ``y``: 每种定性数据类别的数量
+
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+
+	x = [1,2,3,4,5,6,7,8]
+	y = [3,1,4,5,8,9,7,2]
+	plt.bar(x,y,
+	        align='center',
+	        color='c',
+	        tick_label = ['A','B','C','D','E','F','G','H'])
+	plt.xlabel('Container No.')
+	plt.ylabel('Weight (kg)')
+	plt.grid(axis  = 'y')
+
+
+.. image:: images/python_basic/barv.svg
+    :align: center
+
+
+函数\ ``barh()``\ ——用于绘制条形图
+==============================================================
+
+
+- 函数功能：在y轴上绘制定性数据的分布特征。
+- 调用方法：``plt.barh(x,y)``
+- 参数说明
+    * ``x``: 标示在$y$轴上的定性数据的分布特征
+    * ``y``: 每种定性数据类别的数量
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+
+	import matplotlib.pyplot as plt
+
+	# some simple data
+	x = [1,2,3,4,5,6,7,8]
+	y = [3,1,4,5,8,9,7,2]
+
+	plt.barh(x,y,
+	         align='center',
+	         color='c',
+	         tick_label = ['A','B','C','D','E','F','G','H'])
+	plt.ylabel('Container No.')
+	plt.xlabel('Weight (kg)')
+
+.. image:: images/python_basic/barh.svg
+    :align: center
+
+
+函数\ ``hist()``\ ——用于绘制直方图
+==============================================================
+
+- 函数功能：在x轴上绘制定量数据的分布特征。
+- 调用方法：``plt.hist(x)``
+- 参数说明
+    * ``x``: 在x轴上绘制箱体定量数据的输入值
+
+.. code-block:: python
+
+	import numpy as np
+	import matplotlib.pyplot as plt
+
+	boxWeight = np.random.randint(0,10,100)
+	x = boxWeight
+	bins = range(0,10,1)
+
+	plt.hist(x,
+	        bins = bins,
+	        color = 'c',
+	        histtype = 'bar',
+	        rwidth=0.8,
+	        alpha=1)
+
+	plt.xlabel('Weight of the box (kg)')
+	plt.ylabel('Selling Number')
+
+.. image:: images/python_basic/hist.svg
+    :align: center
+
+
+函数\ ``pie()``\ ——用于绘制饼状图
+==============================================================
+
+
+- 函数功能：绘制定性数据的不同类型的百分比
+- 调用方法：``plt.pie(x)``
+- 参数说明
+    * ``x``: 定性数据的不同类型的百分比
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+
+	plt.figure(figsize=(6,6))
+	colors = ["#e41a1c","#377eb8","#4daf4a","#984ea3"]
+	soldNums = [0.05,0.45,0.15,0.35]
+	kinds = ['case1','case2','case3','case4']
+
+	plt.pie(soldNums,
+	       labels=kinds,
+	       autopct="%3.1f%%",
+	       startangle=0,
+	       colors=colors);
+
+.. image:: images/python_basic/pie.svg
+    :align: center
+
+
+函数\ ``scatter()``\ 进阶用法——绘制气泡图
+==============================================================
+
+- 函数功能：二维数据借助气泡大小展示三维数据
+- 调用方法：``plt.scatter(x,y,s=size,c=color,cmap=cmap)``
+- 参数说明
+    * ``x``: x轴上的数值
+    * ``y``: y轴上的数值
+    * ``s``: 标记的大小
+    * ``c``: 标记的颜色
+    * ``cmap``: 标记的颜色映射表
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import matplotlib as mpl
+	import numpy as np
+
+	plt.figure(figsize=(10,6))
+
+	a = np.random.randn(100)
+	b = np.random.randn(100)
+
+	plt.scatter(a,b,
+	           s=np.power(10*a+20*b,2),
+	           c = np.random.randn(100),
+	           cmap=mpl.cm.RdYlBu,
+	           marker='o')
+
+.. image:: images/python_basic/bubble.svg
+    :align: center
+
+
+函数\ ``stem()``\ ——用于绘制棉棒图
+==============================================================
+
+- 函数功能：绘制离散的有序数据
+- 调用方法：``plt.stem(x,y)``
+- 参数说明
+    * ``x``: 指定棉棒的$x$轴基线上的位置
+    * ``y``: 指定棉棒的长度
+    * ``linefmt``: 棉棒的样式
+    * ``markerfmt``: 棉棒末端的样式
+    * ``basefmt``: 基线的样式
+
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import numpy as np
+
+	x = np.linspace(0.5,2*np.pi,20)
+	y = np.random.randn(20)
+
+	plt.stem(x,y,linefmt = '-.', markerfmt = 'o', basefmt = '-')
+
+.. image:: images/python_basic/stem.svg
+    :align: center
+
+
+函数\ ``boxplot()``\ ——用于绘制箱线图
+==============================================================
+
+
+- 函数功能：绘制箱线图
+- 调用方法：``plt.boxplot(x)``
+- 参数说明
+    * ``x``: 箱线图的输入数据
+
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import numpy as np
+
+	x = np.random.randn(1000)
+
+	plt.boxplot(x);
+	plt.xticks([1],["AlphaRM"])
+	plt.ylabel('Random Number')
+
+	plt.grid(linestyle = '--',alpha = 0.3)
+
+.. image:: images/python_basic/box.svg
+    :align: center
+
+函数\ ``errorbar()``\ ——用于绘制误差棉棒图
+==============================================================
+
+- 函数功能：绘制y轴方向或者是x轴方向的误差范围
+- 调用方法：``plt.errorbar(x,y,yerr=a,xerr=b)``
+- 参数说明
+    * ``x``: 数据点的水平位置
+    * ``y``: 数据点的垂直位置
+    * ``yerr``: y轴方向数据点的误差
+    * ``xerr``: x轴方向数据点的误差
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import numpy as np
+
+	x = np.linspace(0.1,0.6,6)
+	y = np.exp(x)
+
+	plt.errorbar(x,y,fmt='bo:',yerr = [0.1, 0.1,0,0.2,0.1,0.3], xerr = 0.02)
+
+.. image:: images/python_basic/error.svg
+    :align: center
+
+绘制进阶统计图形
+++++++++++++++++++++++++
+
+
+
+堆积柱状图
+=================
+
+柱状图主要是应用在定性数据的可视化场景，或者是离散数据的分布展示。例如，
+- 一个本科班级的学生籍贯分布 
+- 出国旅游人士的职业分布
+- 下载一款APP产品的操作系统分布
+
+关于简单的柱状图和条形图的用法，上一节已经介绍，这里我们研究更为复杂的图形。
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+
+	# some simple data
+	x = [1,2,3,4,5]
+	y = [6,10,4,5,1]
+	y1 = [2,6,3,8,5]
+	y2 = [1,2,3,2,1]
+
+	plt.bar(x,y,align='center',color='#66c2a5',tick_label = ['A','B','C','D','E'],label = 'ClassA')
+
+	plt.bar(x,y1,align='center',bottom = y,color='#8da0cb',tick_label = ['A','B','C','D','E'],label = 'ClassB')
+
+	plt.bar(x,y2,align='center',bottom = np.add(y,y1),color='r',tick_label = ['A','B','C','D','E'],label = 'ClassC')
+
+	plt.xlabel('Difficulty')
+	plt.ylabel('Number')
+
+	plt.legend()
+
+.. image:: images/python_basic/stack.svg
+    :align: center
+
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+
+	# some simple data
+	x = [1,2,3,4,5]
+	y = [6,10,4,5,1]
+	y1 = [2,6,3,8,5]
+
+	plt.barh(x,y,align='center',color='#66c2a5',tick_label = ['A','B','C','D','E'],label = 'ClassA')
+
+	plt.barh(x,y1,align='center',left = y,color='#8da0cb',tick_label = ['A','B','C','D','E'],label = 'ClassB')
+
+	plt.ylabel('Difficulty')
+	plt.xlabel('Number')
+
+	plt.legend()
+
+.. image:: images/python_basic/stackh.svg
+    :align: center
+
+分块柱状图
+=================
+
+
+除了将多数据以堆积图的形式进行可视化展示，我们还可以使用分块图的形式。
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+
+	# some simple data
+	x = np.arange(5)
+	y = [6,10,4,5,1]
+	y1 = [2,6,3,8,5]
+
+	bar_width = 0.35
+	tick_label = ['A','B','C','D','E']
+	plt.bar(x,y,bar_width,align='center',color='#66c2a5',tick_label = tick_label,label = 'ClassA')
+
+	plt.bar(x+bar_width,y1,bar_width,align='center',color='#8da0cb',tick_label = tick_label,label = 'ClassB')
+
+	plt.xlabel('Difficulty')
+	plt.ylabel('Number')
+
+	plt.xticks(x+bar_width/2,tick_label)
+
+	plt.legend()
+
+
+.. image:: images/python_basic/group.svg
+    :align: center
+
+
+除此之外，使用\ ``barh()``\ 也可以达到类似的效果。
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+
+	# some simple data
+	x = np.arange(5)
+	y = [6,10,4,5,1]
+	y1 = [2,6,3,8,5]
+
+	bar_width = 0.35
+	tick_label = ['A','B','C','D','E']
+	plt.barh(x,y,bar_width,align='center',color='#66c2a5',tick_label = tick_label,label = 'ClassA')
+
+	plt.barh(x+bar_width,y1,bar_width,align='center',color='#8da0cb',tick_label = tick_label,label = 'ClassB')
+
+	plt.ylabel('Difficulty')
+	plt.xlabel('Number')
+
+	plt.xticks(x+bar_width/2,tick_label)
+
+	plt.legend()
+
+.. image:: images/python_basic/grouph.svg
+    :align: center
+
+
+堆积折线图
+=================
+堆积柱状图的本质是将若干折线图放在同一个坐标轴上，以每条折线下部和下方折线作为填充边界，用一种颜色代表此折线的数值区域。
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import numpy as np
+	x = np.arange(1,6,1)
+	y = [0,4,3,5,6]
+	y1 = [1,3,4,2,7]
+	y2 = [3,4,1,6,5]
+
+	labels = ["BluePlanet","BrownPlanet","GreenPlanet"]
+	colors = ["#8da0cb","#fc8d62","#66c2a5"]
+
+	plt.stackplot(x,y,y1,y2,labels = labels, colors = colors)
+
+	plt.legend(loc = 'upper left')
+
+.. image:: images/python_basic/stackline.svg
+    :align: center
+
+间断条形图
+=================
+
+间断条形图是在条形图的基础上进行绘制的，主要用来可视化定性数据的相同指标在时间维度上的指标值。该方法是通过\ ``broken_barh()``\ 实现的
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import numpy as np
+
+	plt.broken_barh([(30,100),(180,50),(260,70)],(20,8),facecolor = '#1f78b4')
+
+	plt.broken_barh([(60,90),(190,20),(230,30),(280,60)],(10,8),
+	                facecolor = ('#7fc97f','#beaed4','#fdc086','#ffff99'))
+
+	plt.xlim(0,360)
+	plt.ylim(5,35)
+	plt.xlabel('Time')
+
+	plt.xticks(np.arange(0,361,60))
+	plt.yticks([15,25])
+	plt.grid()
+
+.. image:: images/python_basic/broken_barh.svg
+    :align: center
+
+
+
+内嵌环形饼图
+=================
+
+饼图不仅可以展示单一数据的分布情况，还可以通过内嵌式的环形饼图实现多个数据集之间的对比。
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import numpy as np
+
+	plt.figure(figsize=(6,6))
+	elements = ["Flour","Sugar","Cream","Strawberry","Nuts"]
+
+	weight1 = [40,15,20,10,15]
+	weight2 = [30,25,15,20,10]
+
+	colormaplist = ["#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00"]
+	outer_color = colormaplist
+	inner_color = colormaplist
+
+	wedges1,texts1,autotexts1 = plt.pie(weight1,
+	                                   autopct="%3.1f%%",
+	                                   radius=1,
+	                                   pctdistance=0.85,
+	                                   colors=outer_color,
+	                                   textprops=dict(color= "w"),
+	                                   wedgeprops=dict(width=0.3, edgecolor = 'w'))
+
+	wedges1,texts1,autotexts1 = plt.pie(weight2,
+	                                   autopct="%3.1f%%",
+	                                   radius=0.75,
+	                                   pctdistance=0.75,
+	                                   colors=outer_color,
+	                                   textprops=dict(color= "w"),
+	                                   wedgeprops=dict(width=0.3, edgecolor = 'w'))
+	plt.legend(wedges1,elements,fontsize = 12, loc = 'center right',bbox_to_anchor = (1,0,0.3,1))
+
+
+.. image:: images/python_basic/2pie.svg
+    :align: center
+
+箱线图
+=================
+
+箱线图是由一个箱体和一对箱须所组成的统计图形。箱体是由第一四分位数、中位数（第二四分位数）、和第三四分位数组成的。在箱须末端之外的数值可以理解为离群值，因此，箱须是对一组数据范围的大致直观描述。
+
+箱线图主要应用于一系列测量或者观测数据的比较场景中，例如学校间或班级间的测试成绩比较，球队中的队员体能对比，产品优化前后的测试比较以及同类产品的各项性能之间的比较等等。箱线图的应用非常广泛，实现也很简单。
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import numpy as np
+
+	testA = np.random.randn(5000)
+	testB = np.random.randn(5000)
+
+	testlist = [testA,testB]
+	labels = ["AlphaRM","BetaRM"]
+
+	whis = 2.5 # 四分位间距的倍数
+	width = 0.35
+
+	plt.boxplot(testlist,
+	           whis= whis,
+	           widths=width,
+	           sym='o',   # 离群值的标记样式
+	           labels=labels,
+	           notch=True,
+	           patch_artist=False); # 是否给箱体添加颜色
+	plt.ylabel('Random Number')
+
+	plt.grid(linestyle = '--',alpha = 0.3)
+
+
+.. image:: images/python_basic/2bar.svg
+    :align: center
+
+
+完善统计图形
++++++++++++++++++++
+
+
+在绘图区域可能有多个图形，而这些图形如果不加说明，观察者则很难辨识出这些图形的主要内容。因此，我们需要对这些图形添加标签进行说明，这些标签就是图例。同样，一个言简意赅的标题同样能够帮助观察者了解图形的绘制内容。
+
+图例和标题的设置方法
+======================
+图例和标签的设置主要使用\ ``legend()``\ 和\ ``title()``\ 方法
+
+
+.. code-block:: python
+
+	import numpy as np
+	import matplotlib.pyplot as plt
+	%matplotlib inline
+
+	x = np.linspace(-2*np.pi,2*np.pi,200)
+	y = np.sin(x)
+	y1 = np.cos(x)
+
+	plt.plot(x,y,label = "$\sin(x)$")
+	plt.plot(x,y1,label = "$\cos(x)$")
+	plt.xlabel(r'x')
+	plt.legend()
+
+
+.. image:: images/python_basic/legend_and_title.svg
+    :align: center
+
+
+图形大小、字体和字号的设置
+============================================
+
+有的时候我们想调整图形的字号大小，方便观察。
+
+
+.. code-block:: python
+
+	plt.figure(figsize=(15,6))  # 设置图像的大小
+	x = np.linspace(-2*np.pi,2*np.pi,200)
+	y = np.sin(x)
+	y1 = np.cos(x)
+	plt.plot(x,y,label = 'sin(x)')
+	plt.plot(x,y1,label = 'cos(x)')
+	plt.legend(fontsize = 20)  # 设置图例的大小
+	plt.title('$f(x) = sin(x)$',fontsize = 20)  # 设置标题的大小
+	plt.tick_params(labelsize=20)  # 设置刻度的字体大小
+	plt.xlabel(r'$x$',fontsize = 20)  # 设置横轴标签的字体大小
+	plt.ylabel(r'$f(x)$',fontsize = 20)  # 设置纵轴标签的字体大小
+
+
+.. image:: images/python_basic/fontsize.svg
+    :align: center
+
+多个子图的绘制
+=================
+子图的本质是将绘图区划分为网格，在纵横交错的并列网格中，添加绘图坐标轴。实现了一张画图绘制多张图片。
+
+
+可以借助函数\ ``subplot()``\ 实现。
+
+
+
+.. code-block:: python
+
+	import numpy as np 
+	import matplotlib.pyplot as plt
+
+	x = np.linspace(-2*np.pi,2*np.pi,200)
+	plt.figure(figsize=(10,4))
+	y = np.sin(x)
+	y1 = np.cos(x)
+
+
+	plt.subplot(2,2,1)
+	plt.plot(x,y,label = "$\sin(x)$")
+
+
+
+	plt.subplot(2,2,2)
+	plt.plot(x,y1,label = "$\cos(x)$")
+
+	plt.subplot(2,2,3)
+	plt.plot(x,y,label = "$\sin(x)$")
+	plt.subplot(2,2,4)
+	plt.plot(x,y1,label = "$\cos(x)$")
+	plt.savefig('../images/python_basic/subplot.svg',bbox_inches = 'tight')
+
+
+.. image:: images/python_basic/subplot.svg
+    :align: center
+
+
+实用案例：多个统计图形的组合展示
++++++++++++++++++++++++++++++++++++++
+
+这里介绍一个一种可行的写法，不过新手也可以单独绘制每一张图，然后将其手动拼合在一起。
+
+
+.. code-block:: python
+
+	import matplotlib.pyplot as plt
+	import numpy as np
+	fig,ax = plt.subplots(2,3,figsize = (15,10))
+
+	# subplot(2,3,1)
+	colors = ['#8dd3c7','#ffffb3','#bebada']
+	ax[0,0].bar([1,2,3],[0.6,0.8,0.2],color = colors, width = 0.5, hatch = '///',align = 'center')
+
+	# subplot(2,3,2)
+	x = np.linspace(-2*np.pi,2*np.pi,200)
+	y = np.sin(x)
+	y1 = np.cos(x)
+	ax[0,1].plot(x,y,'r',label = "$\sin(x)$")
+	ax[0,1].plot(x,y1,'b',label = "$\cos(x)$")
+	ax[0,1].legend()  # 设置图例的大小
+	plt.xlabel('$x$')  # 设置横轴标签的字体大小
+	plt.ylabel('$f(x)$')  # 设置纵轴标签的字体大小
+
+	# subplot(2,3,3)
+	x = [1,2,3,4,5,6,7,8]
+	y = [3,1,4,5,8,9,7,2]
+
+	ax[0,2].barh(x,y,align='center',color='c',tick_label = ['A','B','C','D','E','F','G','H'])
+
+	plt.ylabel('Container No.')
+	plt.xlabel('Weight (kg)')
+
+	# subplot(2,3,4)
+	import matplotlib as mpl
+	a = np.random.randn(100)
+	b = np.random.randn(100)
+
+	ax[1,0].scatter(a,b,
+	           s=np.power(10*a+20*b,2),
+	           c = np.random.randn(100),
+	           cmap=mpl.cm.RdYlBu,
+	           marker='o')
+
+	# subplot(2,3,5)
+	x = np.linspace(0.5,2*np.pi,20)
+	y = np.random.randn(20)
+
+	ax[1,1].stem(x,y,linefmt = '-.', markerfmt = 'o', basefmt = '-')
+
+
+
+	# subplot(2,3,6)
+	elements = ["Flour","Sugar","Cream","Strawberry","Nuts"]
+
+	weight1 = [40,15,20,10,15]
+	weight2 = [30,25,15,20,10]
+
+	colormaplist = ["#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00"]
+	outer_color = colormaplist
+	inner_color = colormaplist
+
+	wedges1,texts1,autotexts1 = ax[1,2].pie(weight1,
+	                                   autopct="%3.1f%%",
+	                                   radius=1,
+	                                   pctdistance=0.85,
+	                                   colors=outer_color,
+	                                   textprops=dict(color= "w"),
+	                                   wedgeprops=dict(width=0.3, edgecolor = 'w'))
+
+	wedges1,texts1,autotextdds1 = ax[1,2].pie(weight2,
+	                                   autopct="%3.1f%%",
+	                                   radius=0.75,
+	                                   pctdistance=0.75,
+	                                   colors=outer_color,
+	                                   textprops=dict(color= "w"),
+	                                   wedgeprops=dict(width=0.3, edgecolor = 'w'))
+	plt.legend(wedges1,elements,fontsize = 12, loc = 'center right',bbox_to_anchor = (1,0,0.3,1))
+
+.. image:: images/python_basic/subplot_demo.svg
+    :align: center
+
+
+

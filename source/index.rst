@@ -7,12 +7,23 @@
 .. 欢迎来到MCM
 
 
-欢迎来到任公子的个人主页！
+欢迎来到数学建模初学者！
 ===============================
+
+
+本页面由任公子@SJTU负责维护，加入了学习数学建模竞赛的各类资源，供大家学习参考。
+
+联系方式：tongxin.r@gmail.com
+
+
+
+
+
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Content:
+   :caption: CONTENT:
 
    LaTeX
    visualization
@@ -27,9 +38,9 @@
 
 
 
-其他功能
-==================
+.. 其他功能
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
