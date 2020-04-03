@@ -166,10 +166,10 @@ texinfo_documents = [
 ]
 
 
-latex_engine = 'xelatex'
-latex_use_xindy = False
-latex_elements = {
-    'preamble': '\\usepackage[UTF8]{ctex}\n',
-}
+# latex_engine = 'xelatex'
+# latex_use_xindy = False
+# latex_elements = {
+#     'preamble': '\\usepackage[UTF8]{ctex}\n',
+# }
 
 
