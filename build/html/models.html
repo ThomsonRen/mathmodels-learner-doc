@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>基础数学模型 &mdash; 数学建模初学者 1.0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0.2',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="其他的参考资源" href="other_source.html" />
+    <link rel="prev" title="MATLAB入门教程" href="matlab.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 数学建模初学者
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">CONTENT:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="rst_tutorial.html">rst基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_basic.html">Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">数据可视化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LaTeX.html">LaTeX入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB入门教程</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">基础数学模型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">评价模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#topsis">TOPSIS方法</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="other_source.html">其他的参考资源</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">数学建模初学者</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>基础数学模型</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/models.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>基础数学模型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>评价模型<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>我们常常会遇到如下的综合评价问题：<strong>在若干个(同类)对象中，从多个维度对其进行评分，将这些评分综合后，给定一个最终排名。</strong></p>
+<p>如何构成一个综合评价问题呢？通常有如下五个角度</p>
+<ul class="simple">
+<li><strong>评价对象</strong>评价对象就是综合评价问题中所研究的对象，或称为系统。通常情况下，在一个问题中评价对象是属于同一类的，且个数要大于1，不妨假设一个综合评价问题中有<span class="math">\(n\)</span>个评价对象，分别记为</li>
+</ul>
+<div class="math">
+\[S_{1}, S_{2}, \cdots, S_{n}(n&gt;1)\]</div>
+<ul class="simple">
+<li><strong>评价指标:</strong>评价指标是反映评价对象的运行（或发展）状况的基本要素。通常的问题都是有多项指标构成，每一项指标都是从不同的侧面刻画系统所具有某种特征大小的一个度量。一个综合评价问题的评价指标一般可用一个向量<span class="math">\(x\)</span>表示，称为评价指标问题，其中每一个分量就是从一个侧面反映系统的状态，即称为综合评价的指标体系。不失一般性，设系统有<span class="math">\(m\)</span>个评价指标，分别记为</li>
+</ul>
+<div class="math">
+\[x_{1}, x_{2}, \cdots, x_{m}(m&gt;1)\]</div>
+<ul class="simple">
+<li><strong>权重系数:</strong>每一个综合评价问题都有相应的评价目的，针对某种评价目的，各评价指标之间的相对重要性是不同的，评价指标之间的这种相对重要性的大小，可用权重系数来刻画。如果用<span class="math">\(w_{j}(j=1,2, \cdots, m)\)</span>来表示评价指标<span class="math">\(x_j$\)</span>的权重系数，一般应满足</li>
+</ul>
+<div class="math">
+\[w_{j} \geq 0, j=1,2, \cdots, m  \quad  并且  \quad  \sum_{j=1}^{m} w_{j}=1\]</div>
+<p>当各评价对象和评价指标值都确定以后，综合评价结果就依赖于权重系数的取值了，即权重系数确定的合理与否，直接关系到综合评价结果的可信度，甚至影响到最后决策的正确性。因此，权重系数的确定要特别谨慎，应按一定的方法和原则来确定。</p>
+<ul class="simple">
+<li><strong>综合模型</strong>:对于多指标（或多因素）的综合评价问题，就是要通过建立一定的数学模型将多个评价指标值综合成为一个整体的综合评价值，作为综合评价的依据，从而得到相应的评价结果。</li>
+<li><strong>评价者</strong>:评价者是直接参与评价的人，可以是一个人，也可以是一个团体。对于评价目的选择、评价指标体系确定、权重系数的确定和评价模型的建立都与评价者有关。因此，评价者在评价过程中的作用是不可小视的。</li>
+</ul>
+<dl class="docutils">
+<dt>目前国内外综合评价方法有数十种之多，其中主要使用的评价方法有</dt>
+<dd><ul class="first last simple">
+<li>主成分分析法</li>
+<li>因子分析</li>
+<li><strong>TOPSIS</strong></li>
+<li>秩和比法</li>
+<li>灰色关联法</li>
+<li><strong>熵权法</strong></li>
+<li><strong>层次分析法</strong></li>
+<li>模糊评价法</li>
+<li>物元分析法</li>
+<li>聚类分析法</li>
+<li>价值工程法</li>
+<li>神经网络法等</li>
+</ul>
+</dd>
+</dl>
+<p>这里我们重点展开讲其中的**TOPSIS、熵权法和层次分析法**。</p>
+</div>
+<div class="section" id="topsis">
+<h2>TOPSIS方法<a class="headerlink" href="#topsis" title="Permalink to this headline">¶</a></h2>
+<p>C.L.Hwang 和 K.Yoon 于1981年首次提出 TOPSIS (全称：Technique for Order Preference by Similarity to an Ideal Solution)。</p>
+<p>TOPSIS 法是一种常用的组内综合评价方法，能充分利用原始数据的信息，其结果能精确地反映各评价方案之间的差距。基本过程为基于归一化后的原始数据矩阵，采用余弦法找出有限方案中的**最优方案和最劣方案**，然后分别计算各评价对象与最优方案和最劣方案间的距离，获得各评价对象与最优方案的相对接近程度，以此作为评价优劣的依据。该方法对数据分布及样本含量没有严格限制，数据计算简单易行。</p>
+<p>为了客观地评价我国研究生教育的实际状况和各研究生院的教学质量，国务院学位委员会办公室组织过一次研究生院的评估。为了取得经验，先选5所研究生院，收集有关数据资料进行了试评估，下表是所给出的部分数据：</p>
+<p>This is paragraph text <em>before</em> the table.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column 1</th>
+<th class="head">Column 2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Foo</td>
+<td>Put two (or more) spaces as a field separator.</td>
+</tr>
+<tr class="row-odd"><td>Bar</td>
+<td>Even very very long lines like these are fine, as long as you do not put in line endings here.</td>
+</tr>
+</tbody>
+</table>
+<p>This is paragraph text <em>after</em> the table.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="other_source.html" class="btn btn-neutral float-right" title="其他的参考资源" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="matlab.html" class="btn btn-neutral float-left" title="MATLAB入门教程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 任公子@SJTU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

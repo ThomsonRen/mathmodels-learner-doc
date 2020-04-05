@@ -11,9 +11,10 @@
 ===============================
 
 
-本页面由任公子@SJTU负责维护，加入了学习数学建模竞赛的各类资源，供大家学习参考。
+本页面由上海交大数模协会维护，持续更新学习数学建模竞赛的各类资源，对\ **小白友好**\ ，跟我们一起入门数学建模吧~
 
-联系方式：tongxin.r@gmail.com
+
+如果你想加入我们，请联系：tongxin.r@gmail.com
 
 
 
@@ -25,15 +26,14 @@
    :maxdepth: 2
    :caption: CONTENT:
 
-   LaTeX
-   visualization
-   matlab
-   rst_tutorial
+   
    python_basic
-.. MATLAB
-.. 数据可视化visualization.rst
-.. Python网络爬虫
-.. 正则表达式
+   matlab
+   LaTeX
+   models
+   visualization
+   rst_tutorial
+   other_source
 
 
 
