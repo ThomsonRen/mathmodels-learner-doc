@@ -26,7 +26,7 @@
    :maxdepth: 2
    :caption: CONTENT:
 
-   
+ 
    python_basic
    matlab
    LaTeX
